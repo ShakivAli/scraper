@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEBSCRAPY</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+    <div class="container">
+        {%include 'navbar.html'%}
+        <div class="homecontent" aria-hidden="true">
+            <h1>Welcome!</h1>
+            <p>Please select a category to scrap:</p>
+            <div class="foodcategory">
+                <div class="foodcategory1">
+                    <a href="{%url 'food'%}">
+                        <img src="https://wallpapers.com/images/hd/aesthetic-food-pictures-yw84jpuaeol0h8vh.jpg">
+                    </a>
+                    <p>food</p>
+                </div>
+                <div class="foodcategory2">
+                    <a href="{%url 'blockchain'%}">
+                        <img src="https://media.istockphoto.com/id/1338416056/photo/cryptocurrency-bitcoins-levitate-on-pastel-background-3d-render-illustration-with-soft-lights.jpg?s=612x612&w=0&k=20&c=n4WyDInDIrTNb1pzpVjCxtYnVylCbRCZQ9hXTL48EsM=">
+                    </a>
+                    <p>Blockchain</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

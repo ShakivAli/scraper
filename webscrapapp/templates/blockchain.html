@@ -1,0 +1,43 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain</title>
+    <link rel="stylesheet" href="{% static 'css/blockchain.css' %}">
+</head>
+<body>
+    <div class="container">
+        {%include 'navbar.html'%}
+        <div class="blockchaincontent">
+            <h1>Blockchains Scraper</h1>
+            <p>Please choose upto two blockchains listed here:</p>
+            <form action="{%url 'blockchain_submission'%}" method="post" onsubmit="return validateForm()">
+                {%csrf_token%}
+                <div class="labels">
+                    {% for blockchain in blockchain_list %}
+                    <input type="checkbox" name="options" value="{{blockchain}}" id="{{blockchain}}">
+                    <label for="{{blockchain}}">{{blockchain}}</label><br>
+                    {% endfor %}
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <script>
+            function validateForm() {
+                var checkboxes = document.querySelectorAll('input[name="options"]:checked');
+                if (checkboxes.length > 2) {
+                    alert('Please choose upto two options only!');
+                    return false; // Prevent form submission
+                }
+                else if (checkboxes.length == 0) {
+                    alert('Please choose minimum one option!');
+                    return false;
+                }
+                return true; // Allow form submission
+            }
+        </script>
+    </div>
+</body>
+</html>

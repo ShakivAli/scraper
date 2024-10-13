@@ -1,0 +1,35 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food</title>
+    <link rel="stylesheet" href="{% static 'css/foodresult.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+        {%include 'navbar.html'%}
+        <div class="foodresultcontent">
+            <div class="restnameandrating">
+                {%for i,j in zipped_selected_rest_and_ratings%}
+                    <div class="restwithmenu">
+                        <h1>{{i}}</h1>
+                        <p><span class="fa fa-star checked"></span>{{j}}</p>
+                    </div>  
+                {%endfor%}
+            </div>
+            <div class="menulist">
+                {%for i in list_of_menus%}
+                    <div class="menu">
+                        {%for j in i%}
+                        <p>{{j | safe}}</p>
+                        {%endfor%}
+                    </div>
+                {%endfor%}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

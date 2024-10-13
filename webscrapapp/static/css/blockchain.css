@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100&family=Lato&family=Merriweather&display=swap');
+
+* {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important; 
+    -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important; 
+    outline: none !important;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Antonio', sans-serif;
+    background: #060606;
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+    width: 3px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #060606;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #e2e2dc;
+    border-radius: 30px;
+}
+
+.container  {
+    height: 100vh;
+    width: 100vw;
+}
+
+.container .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container .navbar .left p {
+    color: #e2e2dc;
+    font-size: 40px;
+    margin: 0;
+    padding: 2vh;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.container .navbar .left p span {
+    color: aquamarine;
+}
+
+.container .navbar .right {
+    padding-right: 2vh;
+    display: flex;
+    gap: 2vh;
+}
+
+.container .navbar .right a {
+    color: #e2e2dc;
+    text-decoration: none;
+    font-size: 25px;
+    transition: border-bottom 0.2s ease;
+}
+
+.container .navbar .right a:hover {
+    border-bottom: 0.3vh solid aquamarine;
+}
+
+.container .blockchaincontent {
+    color: #e2e2dc;
+    padding-left: 2vh;
+}
+
+.container .blockchaincontent h1 {
+    color: #c06c84;
+    text-align: center;
+    margin-top: 3vh;
+    font-size: 60px;
+}
+
+.container .blockchaincontent p {
+    font-size: 30px;
+    padding-left: 3vw;
+}
+
+.container .blockchaincontent form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.container .blockchaincontent form input[type=checkbox] {
+    display: none;
+    visibility: hidden;
+}
+
+.container .blockchaincontent form .labels {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 30px;
+}
+
+.container .blockchaincontent form .labels label {
+    border: 2px solid #e2e2dc;
+    border-radius: 30px;
+    padding: 30px;
+    width: 40vw;
+    cursor: pointer;
+    font-size: 20px;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.container .blockchaincontent form .labels label:hover {
+    background: #c06c84;
+}
+
+.container .blockchaincontent form input[type=checkbox]:checked + label {
+    background: #c06c84;
+}
+
+.container .blockchaincontent form button {
+    padding: 20px;
+    width: 15vw;
+    border-radius: 30px;
+    font-size: 30px;
+    border: none;
+    margin-bottom: 30px;
+    cursor: pointer;
+    background: #c06c84;
+    transition: transform 0.3s ease;
+}
+
+.container .blockchaincontent form button:hover {
+    transform: scale(1.1);
+    background: aquamarine;
+}
+
+
+@media (max-width: 700px) {
+    .container .navbar .left p {
+        font-size: 30px;
+    }
+
+    .container .navbar .right a {
+        font-size: 15px;
+    }
+
+    .container .blockchaincontent h1 {
+        font-size: 40px;
+    }
+
+    .container .blockchaincontent p {
+        font-size: 20px;
+    }
+
+    .container .blockchaincontent form .labels {
+        grid-template-columns: auto auto;
+    }
+
+    .container .blockchaincontent form button {
+        width: 70vw;
+        font-family: 'Antonio', sans-serif;
+    }
+}

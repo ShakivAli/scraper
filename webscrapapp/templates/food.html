@@ -1,0 +1,43 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food</title>
+    <link rel="stylesheet" href="{% static 'css/food.css' %}">
+</head>
+<body>
+    <div class="container">
+        {%include 'navbar.html'%}
+        <div class="foodcontent">
+            <h1><img src="https://media.tenor.com/AFagQ7fK8JUAAAAj/food-yummy.gif">Foods Scraper<img src="https://media.tenor.com/AFagQ7fK8JUAAAAj/food-yummy.gif"></h1>
+            <p>Please choose upto three restaurants listed here:</p>
+            <form action="{%url 'rest_submission'%}" method="post" onsubmit="return validateForm()">
+                {%csrf_token%}
+                <div class="labels">
+                    {% for rest_name in rest_list %}
+                    <input type="checkbox" name="options" value="{{ rest_name }}" id="{{ rest_name }}">
+                    <label for="{{ rest_name }}">{{ rest_name }}</label><br>
+                    {% endfor %}
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <script>
+            function validateForm() {
+                var checkboxes = document.querySelectorAll('input[name="options"]:checked');
+                if (checkboxes.length > 3) {
+                    alert('Please choose upto three options only!');
+                    return false; // Prevent form submission
+                }
+                else if (checkboxes.length == 0) {
+                    alert('Please choose minimum one option!');
+                    return false;
+                }
+                return true; // Allow form submission
+            }
+        </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100&family=Lato&family=Merriweather&display=swap');
+
+* {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important; 
+    -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important; 
+    outline: none !important;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Antonio', sans-serif;
+    background: #060606;
+}
+
+body::-webkit-scrollbar {
+    width: 3px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #060606;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #e2e2dc;
+    border-radius: 30px;
+}
+
+.container  {
+    height: 100vh;
+    width: 100vw;
+}
+
+.container .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container .navbar .left p {
+    color: #e2e2dc;
+    font-size: 40px;
+    margin: 0;
+    padding: 2vh;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.container .navbar .left p span {
+    color: aquamarine;
+}
+
+.container .navbar .right {
+    padding-right: 2vh;
+    display: flex;
+    gap: 2vh;
+}
+
+.container .navbar .right a {
+    color: #e2e2dc;
+    text-decoration: none;
+    font-size: 25px;
+    transition: border-bottom 0.2s ease;
+}
+
+.container .navbar .right a:hover {
+    border-bottom: 0.3vh solid aquamarine;
+}
+
+.homecontent {
+    color: #e2e2dc;
+    padding: 2vh;
+}
+
+.homecontent h1 {
+    font-size: 100px;
+    padding-left: 10vh;
+    margin: 5vh 0 0 0;
+}
+
+.homecontent p {
+    font-size: 40px;
+    padding-left: 2vh;
+    margin: 4vh 0 0 0;
+    text-align: center;
+}
+
+.homecontent .foodcategory {
+    display: flex;
+    justify-content: center;
+    gap: 5vw;
+    margin-top: 2vh;
+}
+
+.homecontent .foodcategory a .foodcategory1 p {
+    text-decoration: none;
+}
+
+.homecontent .foodcategory .foodcategory1 {
+    background: #e2e2dc;
+    width: 350px;
+    height: 350px;  
+    border-radius: 30px;
+    margin-top: 3vh;
+    overflow: hidden;
+}
+
+.homecontent .foodcategory .foodcategory1 img {
+    width: 350px;
+    height: 350px;
+    border-radius: 30px;
+    filter: opacity(70%);
+    transition: height 0.2s ease-in;
+}
+
+.homecontent .foodcategory .foodcategory1 img:hover {
+    height: 280px;
+    cursor: pointer;
+    filter: opacity(100%);
+    outline: solid #060606;
+}
+
+.homecontent .foodcategory .foodcategory1 p {
+    color: #060606;
+    margin: 0;
+    padding-left: 0;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.homecontent .foodcategory .foodcategory2 {
+    background: #e2e2dc;
+    width: 350px;
+    height: 350px;  
+    border-radius: 30px;
+    margin-top: 3vh;
+    overflow: hidden;
+}
+
+.homecontent .foodcategory .foodcategory2 img {
+    width: 350px;
+    height: 350px;
+    border-radius: 30px;
+    filter: opacity(70%);
+    transition: height 0.2s ease-in;
+}
+
+.homecontent .foodcategory .foodcategory2 img:hover {
+    height: 280px;
+    cursor: pointer;
+    filter: opacity(100%);
+    outline: solid #060606;
+}
+
+.homecontent .foodcategory .foodcategory2 p {
+    color: #060606;
+    margin: 0;
+    padding-left: 0;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+/* for mobile */
+@media (max-width: 700px) {
+    .homecontent h1 {
+        font-size: 60px;
+    }
+    .homecontent p {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .homecontent .foodcategory {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container .navbar {
+        justify-content: space-between;
+    }
+
+    .container .navbar .left p {
+        font-size: 30px;
+    }
+
+    .container .navbar .right a {
+        font-size: 15px;
+    }
+
+    .homecontent .foodcategory {
+        align-items: center;
+    }
+
+    .homecontent .foodcategory .foodcategory1 {
+        width: 300px;
+        height: 300px;
+    }
+
+    .homecontent .foodcategory .foodcategory1 img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .homecontent .foodcategory .foodcategory2 {
+        width: 300px;
+        height: 300px;
+    }
+
+    .homecontent .foodcategory .foodcategory2 img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .homecontent .foodcategory .foodcategory1 p {
+        font-size: 30px;
+    }
+
+    .homecontent .foodcategory .foodcategory2 p {
+        font-size: 30px;
+    }
+
+    .homecontent .foodcategory .foodcategory1 img:hover {
+        height: 250px;
+    }
+
+    .homecontent .foodcategory .foodcategory2 img:hover {
+        height: 250px;
+    }
+}
